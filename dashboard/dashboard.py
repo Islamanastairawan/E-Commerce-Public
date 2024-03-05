@@ -9,8 +9,7 @@ sns.set_theme(style='dark')
 st.sidebar.title('Proyek Analisis Data: E-Commerce Public')
 
 # Mengimpor data
-path = os.getcwd()
-all_df = pd.read_csv(path+"/data_all.csv")
+all_df = pd.read_csv("data_all.csv")
 
 # Mengurutkan kategori produk berdasarkan total pendapatan
 top_categories = all_df.groupby('product_category_name').sum(numeric_only=True)['price'].nlargest(5).index
